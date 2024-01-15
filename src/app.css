@@ -1,0 +1,11 @@
+body {
+    padding: 20px;
+}
+.light {
+    background-color: white;
+    color: black;
+}
+.dark {
+    background-color: #2A272A;
+    color: aliceblue
+}
