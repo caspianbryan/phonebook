@@ -47,8 +47,9 @@ const Info = () => {
 					setSuccessMessage(null)
 				}, 3000)
 
-			}).catch((err) => {
-				console.log(err);
+			}).catch((error) => {
+				console.log(error);
+				console.log(error.res.data.error);
 			})
 		}
 		
