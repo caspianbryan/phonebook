@@ -48,8 +48,7 @@ const Info = () => {
 				}, 3000)
 
 			}).catch((error) => {
-				console.log(error);
-				console.log(error.res.data.error);
+				console.log(error.res.data.err);
 			})
 		}
 		
@@ -75,7 +74,6 @@ const Info = () => {
 			const updatePerson = {
 				name: name,
 				number: newNumber,
-				id: id,
 			}
 			phoneService.update(id, updatePerson).then(() => {
 				setPersons(persons.map((pers) => (
@@ -100,7 +98,10 @@ const Info = () => {
 					setErrorMessage(null)
 				}, 3000);
 			})
-			.catch(err => console.log(`delete error ${err}`, err));
+			.catch(err => {
+				console.log(`delete error ${err}`, err)
+				setErrorMessage(`Delte error: ${err.message}`)
+			});
 		}
 	};
 	  
